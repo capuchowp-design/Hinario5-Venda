@@ -113,6 +113,8 @@
       li.textContent = /^\d+$/.test(v) ? 'Número fora da lista (1 a ' + C.totalHinos + ')' : 'Nenhum título encontrado. Digite o número do hino.';
       li.style.cursor = 'default'; res.appendChild(li); res.hidden = false; return;
     }
+    var total = itens.length;
+    itens = itens.slice(0, 30);
     itens.forEach(function (n) {
       var li = document.createElement('li'); li.tabIndex = 0; li.setAttribute('role', 'option');
       li.innerHTML = '<b>' + pad(n) + '</b>'; li.appendChild(document.createTextNode(titulo(n)));
@@ -121,6 +123,11 @@
       li.addEventListener('keydown', function (e) { if (e.key === 'Enter') add(); });
       res.appendChild(li);
     });
+    if (total > itens.length) {
+      var mais = document.createElement('li'); mais.style.cursor = 'default';
+      mais.textContent = '+ ' + (total - itens.length) + ' resultados. Digite mais letras para filtrar.';
+      res.appendChild(mais);
+    }
     res.hidden = false;
   }
   inp.addEventListener('input', sugerir);

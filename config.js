@@ -4,10 +4,10 @@
    ============================================================ */
 window.CONFIG = {
   // WhatsApp que recebe os pedidos: só números, com 55 + DDD + número
-  whatsapp: "5500000000000",
+  whatsapp: "5512974087661",
 
   // Chave Pix mostrada ao cliente (CPF, e-mail, celular ou chave aleatória)
-  pix: { chave: "SUA-CHAVE-PIX-AQUI", nome: "Seu Nome Completo" },
+  pix: { chave: "meuidwp@duck.com", nome: "" },
 
   // Preços em reais — AJUSTE para os seus valores
   precoAvulso: 4.9,      // cada hino (PDF)
